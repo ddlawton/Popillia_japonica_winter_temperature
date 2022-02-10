@@ -5,4 +5,8 @@ We are investing the potential increase in overwinter survival of a destructive 
 
 This involves extracting remotely sensed datat (ERA-5 climatic reanalysis data) from Google Earth Engine and modeling in R. 
 
+Google Earth Engine code can be found here:
+
+https://code.earthengine.google.com/?accept_repo=users/ddlawton/Japanese_beetles
+
 More to follow.
