@@ -30,7 +30,6 @@ AIC(mod,mod_lm)
 BIC(mod,mod_lm)
 
 
-
 summary(mod)
 sim_resid <- simulateResiduals(mod)
 plot(sim_resid)
