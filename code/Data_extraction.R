@@ -3,6 +3,7 @@
 # Extracting remotely sensed data
 # to csv
 ###
+
 rm(list = ls())
 std <- function(x) sd(x)/sqrt(length(x))
 
