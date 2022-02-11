@@ -65,7 +65,7 @@ ERA_dat <- read.csv("data/MN_temps_all.csv") %>% #reading in the data and gettin
 
 combined_dat <- dat %>% left_join(ERA_dat,by=c("Year","month","ERA_depth"))
 
-
+write.csv(combined_dat,file="data/processed/ERA_logger_data_validation.csv")
 
 
 
