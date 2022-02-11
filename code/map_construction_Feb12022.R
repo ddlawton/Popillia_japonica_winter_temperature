@@ -14,6 +14,19 @@ library(patchwork)
 #county_list <- list('27003', '27019', '27037','27053','27123','27139','27163')
 
 temps <- stack("data/MN_7_COUNTY_WINTER_TEMP.tif")
+years <- seq(1985,2020,by=5)
+
+years2 <- data.frame(rep(years, each=4)) %>%
+  mutate(months = rep(c("01","02","03","12"),times=8),
+         paste0(rep.years..each...4.,months))
+
+
+
+raster_bands <- years2$`paste0(rep.years..each...4., months)`
+
+raster_bands2 <- append(raster_bands,"198412",after=0)
+raster_bands3 <- paste0("X", raster_bands2)
+
 
 MN <- ne_states(country="United States of America") %>% st_as_sf() %>%
   filter(gn_name %in% c("Minnesota","Wisconsin")) %>% dplyr::select(gn_name)
@@ -48,6 +61,8 @@ names <- names(temps)
 names <- gsub('_soil_temperature_level_2', '', names)
 
 names(temps) <- names
+
+subset(temps,raster_bands3[1:4])
 
 x2016_x2017 <- raster::subset(temps, c("X201612","X201701","X201702","X201703"), value = T) %>% mean()
 x2017_x2018 <- raster::subset(temps, c("X201712","X201801","X201802","X201803"), value = T) %>% mean()
